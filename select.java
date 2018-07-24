@@ -1,23 +1,28 @@
-package sequence;
+/**
+ * 
+ * @author Wangc
+ *  ç®€å•æ’åºç®—æ³•
+ */
+
 @SuppressWarnings(value = { "all" })
 public class select {
-	//±È½Ï½ÏĞ¡µÄÖµ
+	//æ¯”è¾ƒè¾ƒå°çš„å€¼
 	private static boolean less(Comparable v,Comparable w) {
 		return v.compareTo(w)<0;
 	}
-	//½»»»ÏÂ±ê
+	//äº¤æ¢ä¸‹æ ‡
 	private static void exch(Comparable[] a, int i,int j) {
 		Comparable t = a[i];
 		a[i]=a[j];
 		a[j]=t;
 	}
-	//´òÓ¡Êı×é
+	//æ‰“å°æ•°ç»„
 	private static void show(Comparable[] a) {
 		for (int i = 0; i < a.length; i++) {
 			System.out.println(a[i]+" ");
 		}
 	}
-	//²âÊÔÊÇ·ñÓĞĞò
+	//æµ‹è¯•æ˜¯å¦æœ‰åº
 	private static boolean isSorted(Comparable[] a) {
 		for (int i = 0; i < a.length; i++) {
 			if (less(a[i], a[i-1])) {
@@ -26,9 +31,9 @@ public class select {
 		}
 		return true;
 	}
-	//Ñ¡ÔñÅÅĞò
+	//é€‰æ‹©æ’åº
 	public static void sort(Comparable[] a) {
-		//½«a[]ÅÅĞò
+		//å°†a[]æ’åº
 		for (int i = 0; i < a.length; i++) {
 			int min = i;
 			for (int j = i+1; j < a.length; j++) {
@@ -39,7 +44,7 @@ public class select {
 			}
 		}
 	}
-	//²åÈëÅÅĞò
+	//æ’å…¥æ’åº
 	public static void sort1(Comparable[] a) {
 		for (int i = 1; i < a.length; i++) {
 			for (int j = i; j>0 && less(a[j],a[j-1]); j--) {
@@ -48,11 +53,12 @@ public class select {
 		}
 	}
 	
-	//Ï£¶ûÅÅĞò
+	//å¸Œå°”æ’åº
 	
 	public static void sort2(Comparable[] a) {
 		int n = a.length;
 		int h = 1;
+		//ä»¥æ­¥é•¿ä¸º3åˆ†ç»„
 		while(h<n/3) {
 			h=h*3+1;
 		}
